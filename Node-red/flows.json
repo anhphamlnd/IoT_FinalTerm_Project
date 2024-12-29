@@ -1,0 +1,794 @@
+[
+    {
+        "id": "664786eedbd3e4ea",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "mqtt",
+        "broker": "17b5695ce7f242c580137c2723b6e8b4.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "a0044c89d8fdc531",
+        "clientid": "node-red",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "PIR",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Hệ thống tưới nước thông minh trong nhà kính",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3345c847e37ece05",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a0044c89d8fdc531",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "ca_cert.h",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "f61275e7210fab35",
+        "type": "ui_group",
+        "name": "Dữ liệu nhiệt độ và độ ẩm",
+        "tab": "dashboard_tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "abfdb04204162430",
+        "type": "ui_group",
+        "name": "Chất lượng không khí",
+        "tab": "dashboard_tab",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "75d53fc277beca25",
+        "type": "ui_group",
+        "name": "Độ khô đất",
+        "tab": "dashboard_tab",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9c78837889bff936",
+        "type": "ui_group",
+        "name": "Điều khiển IR Led",
+        "tab": "dashboard_tab",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "417f98f511ed99bf",
+        "type": "ui_group",
+        "name": "Hệ thống tưới nước",
+        "tab": "dashboard_tab",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt_in_air",
+        "type": "mqtt in",
+        "z": "664786eedbd3e4ea",
+        "name": "Air Quality",
+        "topic": "esp32/air_quality",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "6e0c75f4cea54cb9"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_in_soil",
+        "type": "mqtt in",
+        "z": "664786eedbd3e4ea",
+        "name": "Soil Moisture",
+        "topic": "esp32/soil_moisture",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "soil_ui",
+                "bfecfa3593d9f46c"
+            ]
+        ]
+    },
+    {
+        "id": "soil_ui",
+        "type": "ui_gauge",
+        "z": "664786eedbd3e4ea",
+        "name": "Soil Moisture",
+        "group": "75d53fc277beca25",
+        "order": 3,
+        "width": "6",
+        "height": "4",
+        "gtype": "gage",
+        "title": "",
+        "label": "Độ khô đất (%)",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00ff00",
+            "#ffcc00",
+            "#ff0000"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "9e19511c2b59b10b",
+        "type": "mqtt in",
+        "z": "664786eedbd3e4ea",
+        "name": "PIR Sensor",
+        "topic": "esp32/pir",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 860,
+        "wires": [
+            [
+                "9ab7de8c12310d3c"
+            ]
+        ]
+    },
+    {
+        "id": "9ab7de8c12310d3c",
+        "type": "switch",
+        "z": "664786eedbd3e4ea",
+        "name": "PIR Status Switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 780,
+        "wires": [
+            [
+                "55d829b1ce49089a"
+            ],
+            [
+                "cc4170f0150c4f6c"
+            ]
+        ]
+    },
+    {
+        "id": "55d829b1ce49089a",
+        "type": "change",
+        "z": "664786eedbd3e4ea",
+        "name": "Motion Detected",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Motion Detected",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 680,
+        "wires": [
+            [
+                "da7e89ad6411dff4"
+            ]
+        ]
+    },
+    {
+        "id": "cc4170f0150c4f6c",
+        "type": "change",
+        "z": "664786eedbd3e4ea",
+        "name": "No Motion",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "No Motion",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 860,
+        "wires": [
+            [
+                "da7e89ad6411dff4"
+            ]
+        ]
+    },
+    {
+        "id": "da7e89ad6411dff4",
+        "type": "ui_text",
+        "z": "664786eedbd3e4ea",
+        "group": "dashboard_group",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "name": "PIR Status",
+        "label": "PIR Motion Detected",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 910,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "6a6e323491904c38",
+        "type": "mqtt in",
+        "z": "664786eedbd3e4ea",
+        "name": "DHT11 Sensor",
+        "topic": "esp32/dht",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "5a048c98563da7ac"
+            ]
+        ]
+    },
+    {
+        "id": "5a048c98563da7ac",
+        "type": "function",
+        "z": "664786eedbd3e4ea",
+        "name": "Parse DHT11 Data",
+        "func": "let data = msg.payload;\nlet temperature = data.match(/Temperature: ([\\d\\.]+)/)[1];\nlet humidity = data.match(/Humidity: ([\\d\\.]+)/)[1];\n\nreturn [\n    { payload: parseFloat(temperature) },\n    { payload: parseFloat(humidity) }\n];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 140,
+        "wires": [
+            [
+                "ebbd49885bced25f"
+            ],
+            [
+                "b4c934475ee6ceca"
+            ]
+        ]
+    },
+    {
+        "id": "ebbd49885bced25f",
+        "type": "ui_gauge",
+        "z": "664786eedbd3e4ea",
+        "name": "Temperature",
+        "group": "f61275e7210fab35",
+        "order": 1,
+        "width": "6",
+        "height": "3",
+        "gtype": "donut",
+        "title": "Temperature (°C)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 50,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": 25,
+        "seg2": 35,
+        "diff": false,
+        "className": "",
+        "x": 870,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b4c934475ee6ceca",
+        "type": "ui_gauge",
+        "z": "664786eedbd3e4ea",
+        "name": "Humidity",
+        "group": "f61275e7210fab35",
+        "order": 2,
+        "width": "6",
+        "height": "3",
+        "gtype": "donut",
+        "title": "Humidity (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#0080ff",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": 40,
+        "seg2": 70,
+        "diff": false,
+        "className": "",
+        "x": 840,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e189826c02ed12b3",
+        "type": "mqtt in",
+        "z": "664786eedbd3e4ea",
+        "name": "LED Control",
+        "topic": "esp32/led_control",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1000,
+        "wires": [
+            [
+                "b515e8ae42c26db7"
+            ]
+        ]
+    },
+    {
+        "id": "b515e8ae42c26db7",
+        "type": "ui_text",
+        "z": "664786eedbd3e4ea",
+        "group": "9c78837889bff936",
+        "order": 3,
+        "width": "6",
+        "height": "1",
+        "name": "LED Status",
+        "label": "LED Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 730,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "102cd6150b9dcc51",
+        "type": "ui_switch",
+        "z": "664786eedbd3e4ea",
+        "name": "Control LED",
+        "label": "LED Control",
+        "tooltip": "",
+        "group": "9c78837889bff936",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp32/led_control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 150,
+        "y": 1220,
+        "wires": [
+            [
+                "618cea27a34a36ed"
+            ]
+        ]
+    },
+    {
+        "id": "618cea27a34a36ed",
+        "type": "mqtt out",
+        "z": "664786eedbd3e4ea",
+        "name": "Publish LED Control",
+        "topic": "esp32/led_control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker",
+        "x": 740,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "1260e5ccbb2f033e",
+        "type": "ui_switch",
+        "z": "664786eedbd3e4ea",
+        "name": "Relay Control",
+        "label": "Relay ON/OFF",
+        "tooltip": "",
+        "group": "417f98f511ed99bf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "relay_topic",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "RELAY_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "RELAY_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 400,
+        "y": 1420,
+        "wires": [
+            [
+                "0c7888182530cfa5"
+            ]
+        ]
+    },
+    {
+        "id": "7e51e68d2e771040",
+        "type": "ui_dropdown",
+        "z": "664786eedbd3e4ea",
+        "name": "Mode Control",
+        "label": "Mode",
+        "tooltip": "",
+        "place": "",
+        "group": "417f98f511ed99bf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "AUTO",
+                "value": "AUTO",
+                "type": "str"
+            },
+            {
+                "label": "MANUAL",
+                "value": "MANUAL",
+                "type": "str"
+            }
+        ],
+        "topic": "mode_topic",
+        "topicType": "str",
+        "className": "",
+        "x": 400,
+        "y": 1520,
+        "wires": [
+            [
+                "e5a4e8421b606e7c"
+            ]
+        ]
+    },
+    {
+        "id": "0c7888182530cfa5",
+        "type": "mqtt out",
+        "z": "664786eedbd3e4ea",
+        "name": "MQTT Relay",
+        "topic": "esp32/relay",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker",
+        "x": 830,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "e5a4e8421b606e7c",
+        "type": "mqtt out",
+        "z": "664786eedbd3e4ea",
+        "name": "MQTT Mode",
+        "topic": "esp32/mode",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker",
+        "x": 600,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "6e0c75f4cea54cb9",
+        "type": "ui_chart",
+        "z": "664786eedbd3e4ea",
+        "name": "",
+        "group": "abfdb04204162430",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Chất lượng không khí",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfecfa3593d9f46c",
+        "type": "ui_text",
+        "z": "664786eedbd3e4ea",
+        "group": "75d53fc277beca25",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Độ khô đất",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 670,
+        "y": 560,
+        "wires": []
+    }
+]
